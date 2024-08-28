@@ -9,7 +9,6 @@ function updateBreeds() {
     const species = document.getElementById('species').value;
     const breedSelect = document.getElementById('breed');
     breedSelect.innerHTML = '<option value="">Selecione uma raça</option>'; // Reset breeds options
-
     if (species && breeds[species]) {
         breeds[species].forEach(breed => {
             const option = document.createElement('option');
@@ -40,11 +39,10 @@ function registerAnimal() {
             <strong>Dono:</strong> ${owner}
         `;
         animalList.appendChild(animalItem);
-
-        // Limpar o formulário
+        
         document.getElementById('animalName').value = '';
         document.getElementById('species').selectedIndex = 0;
-        updateBreeds(); // Reset breeds options
+        updateBreeds(); 
         document.getElementById('ageValue').value = '';
         document.getElementById('ageUnit').selectedIndex = 0;
         document.getElementById('owner').value = '';
